@@ -41,12 +41,31 @@ lm_vote <- lm(formula = vote ~ risk + bid + NEP + income + age, data = hw3)
 # Analyzing coefficients:
 
 
-
+# For every additional unit of risk reduction, there is an increase in voting YES by 0.0007445.
+# For every $1 increase in cost per household, there is a decrease in voting YES by 0.0010699.
+# For every additional unit increase for NEP score, there is an increase in voting YES by 0.0158639.
+# For every additional $1 increase in income for the top one percent of society, there is an increase in voting YES by 0.0088282.
+# For every additional $1 increase in income for the poor communities of society, there is an increase in voting YES by 0.0027386.
+# For every additional $1 increase in income for the rich communities of society, there is an increase in voting YES by 0.0074891.
+# For every additional $1 increase in income for the very rich communities of society, there is an increase in voting YES by 0.0467922.
+# For every additional person aged 41-50, there is an increase in voting YES by 0.0099816.
+# For every additional person aged 31-40, there is an decrease in voting YES by 0.0201190.
+# For every additional person aged 51-60, there is an decrease in voting YES by 0.0162261.
+# For every additional person aged 18-30, there is an increase in voting YES by 0.0204401.
 
 
 # Put linear model into stargazer table 
 
 stargazer(lm_vote)
+
+
+
+```
+
+```{r Question 2, echo = FALSE}
+
+## Based on this regression, what can you say about the value of a single prevented whale death? (Hint: Think about how risk reduction for all whales translates into the number of whale deaths avoided)
+
 
 
 ```
