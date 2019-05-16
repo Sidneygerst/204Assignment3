@@ -9,7 +9,7 @@ output:
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
-```{r Load Packages, echo = FALSE, include = FALSE, message = FALSE, warning = FALSe}
+```{r Load Packages, echo = FALSE, include = FALSE, message = FALSE, warning = FALSE}
 
 library(tidyverse)
 library(stargazer)
