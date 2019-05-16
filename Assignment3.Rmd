@@ -36,6 +36,14 @@ lm_vote <- lm(formula = vote ~ risk + bid + NEP + income + age, data = hw3)
 #         0.0074891          0.0467922          0.0099816         -0.0201190         -0.0162261          0.0204401 
 
 
+
+
+# Analyzing coefficients:
+
+
+
+
+
 # Put linear model into stargazer table 
 
 stargazer(lm_vote)
