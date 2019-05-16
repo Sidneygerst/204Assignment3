@@ -43,17 +43,18 @@ summary(lm_vote)
 # Analyzing coefficients:
 
 
-# For every additional unit of risk reduction, there is an increase in voting YES by 0.0007445.
-# For every $1 increase in cost per household, there is a decrease in voting YES by 0.0010699.
-# For every additional unit increase for NEP score, there is an increase in voting YES by 0.0158639.
-# For every additional $1 increase in income for the top one percent of society, there is an increase in voting YES by 0.0088282.
-# For every additional $1 increase in income for the poor communities of society, there is an increase in voting YES by 0.0027386.
-# For every additional $1 increase in income for the rich communities of society, there is an increase in voting YES by 0.0074891.
-# For every additional $1 increase in income for the very rich communities of society, there is an increase in voting YES by 0.0467922.
-# For every additional person aged 41-50, there is an increase in voting YES by 0.0099816.
-# For every additional person aged 31-40, there is an decrease in voting YES by 0.0201190.
-# For every additional person aged 51-60, there is an decrease in voting YES by 0.0162261.
-# For every additional person aged 18-30, there is an increase in voting YES by 0.0204401.
+# For every 1% increase in risk reduction, there is an increase in probablility of voting YES by 0.0007445.
+# For every $1 increase in cost per household, there is a decrease in probability of voting YES by 0.0010699.
+# For every additional point increase for NEP score, there is an increase in probability of voting YES by 0.0158639.
+# Individuals in the top one percent income category are 0.0088282 more likely to vote YES than individuals in the middle income class.
+# Individuals in the poor income category are 0.0027386 more likely to vote YES than inidividuals in the middle income category. 
+# Individuals in the rich income category are 0.0074891 more likely to vote YES than inidividuals in the middle income category.
+# Individuals in the very rich income category are 0.0467922 more likely to vote YES than inidividuals in the middle income category.
+
+# Age to fifty individuals are 0.0099816 more likely to vote YES than age over 60.
+# Age to 40 individuals are 0.0201190 more likely to vote YES than age over 60.
+# Age to 60 are 0.0162261 are less likely to vote YES than age over 60.
+# Age to 30 are 0.0204401 are less likely to vote YES than age over 60.
 
 
 # Put linear model into stargazer table 
