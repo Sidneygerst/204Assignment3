@@ -26,6 +26,8 @@ hw3 <- read_csv("HW3Data.csv")
 
 lm_vote <- lm(formula = vote ~ risk + bid + NEP + income + age, data = hw3)
 
+summary(lm_vote)
+
 
 
 # Coefficients:
