@@ -69,6 +69,43 @@ stargazer(lm_vote)
 
 ## Based on this regression, what can you say about the value of a single prevented whale death? (Hint: Think about how risk reduction for all whales translates into the number of whale deaths avoided)
 
+#In order to reduce the risk of one whale strike, reduce the risk to 4%. 
+
+#The average of voting YES is 0.714
+
+#Compare the willingness to pay at business as usual (VSR of 0) to the willingness to pay when increasing the VSR to 4%. 
+
+#average of voting yes
+avg_vote <- mean(hw3$vote)
+
+#assign the variables
+
+vote_int <- lm_vote$coefficients[1]
+risk <- lm_vote$coefficients[2]
+bid <- lm_vote$coefficients[3]
+NEP <- lm_vote$coefficients[4]
+inc_1 <- lm_vote$coefficients[5]
+inc_poor <- lm_vote$coefficients[6]
+inc_rich <- lm_vote$coefficients[7]
+inc_vrich <- lm_vote$coefficients[8]
+age_50 <- lm_vote$coefficients[9]
+age_40 <- lm_vote$coefficients[10]
+age_60 <- lm_vote$coefficients[11]
+age_30 <- lm_vote$coefficients[12]
+
+
+
+#Find the Bid (cost to households) when reduction is 0% = -850
+
+bid_zero <- (vote_int + (risk*0) + NEP + inc_1 + inc_poor + inc_rich + inc_vrich + age_50 + age_30 + age_40 + age_60 + avg_vote)/bid
+
+#Find the Bid (cost to households) when reduction is 4% = -853
+
+bid_four <- (vote_int + (risk*4) + NEP + inc_1 + inc_poor + inc_rich + inc_vrich + age_50 + age_30 + age_40 + age_60+ avg_vote)/bid
+
+#The value of a single whale is the difference between the willingness to pay for a vessel speed reduction program at 4% and at 0%. = -2.78
+
+wtp_value <- bid_four - bid_zero 
 
 
 ```
