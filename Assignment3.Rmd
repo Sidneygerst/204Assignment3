@@ -39,7 +39,6 @@ summary(lm_vote)
 
 
 
-
 # Analyzing coefficients:
 
 
@@ -75,8 +74,8 @@ stargazer(lm_vote)
 
 #Compare the willingness to pay at business as usual (VSR of 0) to the willingness to pay when increasing the VSR to 4%. 
 
-#average of voting yes
-avg_vote <- mean(hw3$vote)
+#average of voting yes or no (0 or 1) is 0.5
+avg_vote <- 0.5
 
 #assign the variables
 
@@ -93,17 +92,19 @@ age_40 <- lm_vote$coefficients[10]
 age_60 <- lm_vote$coefficients[11]
 age_30 <- lm_vote$coefficients[12]
 
+#average of NEP
+NEP_avg <- mean(hw3$NEP)  
 
 
-#Find the Bid (cost to households) when reduction is 0% = -850
+#Find the Bid (cost to households) when reduction is 0% = 269 
 
-bid_zero <- (vote_int + (risk*0) + NEP + inc_1 + inc_poor + inc_rich + inc_vrich + age_50 + age_30 + age_40 + age_60 + avg_vote)/bid
+bid_zero <- (vote_int + (risk*0) + (NEP*NEP_avg) + inc_1 + inc_poor + inc_vrich + inc_rich + age_50 + age_30 + age_40 + age_60 - avg_vote)/(-bid)
 
-#Find the Bid (cost to households) when reduction is 4% = -853
+#Find the Bid (cost to households) when reduction is 4% = 272
 
-bid_four <- (vote_int + (risk*4) + NEP + inc_1 + inc_poor + inc_rich + inc_vrich + age_50 + age_30 + age_40 + age_60+ avg_vote)/bid
+bid_four <- (vote_int + (risk*4) + (NEP*NEP_avg) + inc_1 + inc_poor + inc_rich + inc_vrich + age_50 + age_30 + age_40 + age_60 - avg_vote)/(-bid)
 
-#The value of a single whale is the difference between the willingness to pay for a vessel speed reduction program at 4% and at 0%. = -2.78
+#The value of a single whale is the difference between the willingness to pay for a vessel speed reduction program at 4% and at 0%. = 2.78
 
 wtp_value <- bid_four - bid_zero 
 
