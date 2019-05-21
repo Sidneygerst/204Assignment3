@@ -135,8 +135,19 @@ wtp_value <- bid_four - bid_zero
 
 ```
 
+The Bid when reduction is 0%. The average vote between 0 (no) and 1 (yes) is 0.5. 
+$0.5 = `r round(vote_int, digits = 4)` + `r round(risk, digits=4)`(0) + `r round(NEP, digits=4)`(NEP) + `r round(inc_1, digits=4)`(Income~One~Percent) + `r round(inc_vrich, digits=4)`(Income~Very~Rich)  + `r round(inc_rich, digits=4)`(Income~Rich) +`r round(age_50, digits=4)`(Age~to~50) +`r round(age_30, digits=4)`(Age~to~30) +`r round(age_40, digits=4)`(Age~to~40) +`r round(age_60, digits=4)`(Age~to~60) - `r round(bid, digits=4)`(Bid)$
 
+$Willingness~to~Pay = `r round(bid_zero, digits=2)`$
 
+The Bid when reduction is 4%. 
+$0.5 = `r round(vote_int, digits = 4)` + `r round(risk, digits=4)`(4) + `r round(NEP, digits=4)`(NEP) + `r round(inc_1, digits=4)`(Income~One~Percent) + `r round(inc_vrich, digits=4)`(Income~Very~Rich)  + `r round(inc_rich, digits=4)`(Income~Rich) +`r round(age_50, digits=4)`(Age~to~50) +`r round(age_30, digits=4)`(Age~to~30) +`r round(age_40, digits=4)`(Age~to~40) +`r round(age_60, digits=4)`(Age~to~60) - `r round(bid, digits=4)`(Bid)$
+
+$Willingness~to~Pay = `r round(bid_four, digits=2)`$ 
+
+The value of a single whale is the difference between the willingness to pay (i.e.Bid) for a vessel speed reduction program at 4% and at 0%. 
+
+$Individual~Whale~Value = `r round(wtp_value, digits=2)`$ 
 
 ```{r Question 3, echo = FALSE, include = FALSE, message = FALSE, warning = FALSE}
 
