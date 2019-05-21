@@ -97,7 +97,8 @@ i. For every additional point increase for NEP score, there is an increase in pr
 j. For every $1 increase in annual payment for a household (bid), there is a decrease in probability of voting YES by 0.0010699.
 k. For every 1% increase in risk reduction, there is an increase in probablility of voting YES by 0.0007445.
 
-
+<br>
+<br>
 
 ###2. Value of a single prevented whale death 
 
@@ -135,19 +136,29 @@ wtp_value <- bid_four - bid_zero
 
 ```
 
-The Bid when reduction is 0%. The average vote between 0 (no) and 1 (yes) is 0.5. 
+**The Bid when reduction is 0%. The average vote between 0 (no) and 1 (yes) is 0.5. **
 $0.5 = `r round(vote_int, digits = 4)` + `r round(risk, digits=4)`(0) + `r round(NEP, digits=4)`(NEP) + `r round(inc_1, digits=4)`(Income~One~Percent) + `r round(inc_vrich, digits=4)`(Income~Very~Rich)  + `r round(inc_rich, digits=4)`(Income~Rich) +`r round(age_50, digits=4)`(Age~to~50) +`r round(age_30, digits=4)`(Age~to~30) +`r round(age_40, digits=4)`(Age~to~40) +`r round(age_60, digits=4)`(Age~to~60) - `r round(bid, digits=4)`(Bid)$
 
 $Willingness~to~Pay = `r round(bid_zero, digits=2)`$
 
-The Bid when reduction is 4%. 
+<br>
+**The Bid when reduction is 4%. **
 $0.5 = `r round(vote_int, digits = 4)` + `r round(risk, digits=4)`(4) + `r round(NEP, digits=4)`(NEP) + `r round(inc_1, digits=4)`(Income~One~Percent) + `r round(inc_vrich, digits=4)`(Income~Very~Rich)  + `r round(inc_rich, digits=4)`(Income~Rich) +`r round(age_50, digits=4)`(Age~to~50) +`r round(age_30, digits=4)`(Age~to~30) +`r round(age_40, digits=4)`(Age~to~40) +`r round(age_60, digits=4)`(Age~to~60) - `r round(bid, digits=4)`(Bid)$
 
 $Willingness~to~Pay = `r round(bid_four, digits=2)`$ 
 
-The value of a single whale is the difference between the willingness to pay (i.e.Bid) for a vessel speed reduction program at 4% and at 0%. 
+<br>
+
+**The value of a single whale is the difference between the willingness to pay (i.e.Bid) for a vessel speed reduction program at 4% and at 0%. **
 
 $Individual~Whale~Value = `r round(wtp_value, digits=2)`$ 
+
+
+<br>
+<br>
+
+### 3. Estimated Willingness to Pay for three arbitrary respondents for 60% risk reduction VSR program.
+
 
 ```{r Question 3, echo = FALSE, include = FALSE, message = FALSE, warning = FALSE}
 
@@ -197,6 +208,46 @@ bid_7 <-(vote_int + (NEP*22) + inc_1 + age_40 - avg_vote)/(bid)
 
 
 ```
+
+
+**Three arbitrary respondents:**
+
+- 8   NEP: 29   Income: Very Rich   Age: To Thirty    Vote: 1
+
+- 63  NEP: 37   Income: Rich        Age: Over Sixty   Vote: 1
+
+- 7   NEP: 22   Income: One Percent Age: To Forty     Vote: 0
+
+<br>
+
+**Willingness to Pay for 60% risk reduction program: **
+
+Individual 8: 
+
+$`r avg_vote` = `r round(vote_int, digits = 4)` + `r round(age_30, digits=4)`(Age~to~30) + `r round(inc_vrich, digits=4)`(Income~Very~Rich) + `r round(NEP, digits=4)`(NEP*29) - `r round(bid, digits=4)`(Bid) + `r round(risk, digits=4)`(60)$
+
+$Willingness~to~Pay = `r round(abs(bid_8), digits=2)`$    
+
+<br>
+
+Individual 63: 
+
+$`r avg_vote` = `r round(vote_int, digits = 4)` + `r round(inc_rich, digits=4)`(Income~Rich) + `r round(NEP, digits=4)`(NEP*37) - `r round(bid, digits=4)`(Bid) + `r round(risk, digits=4)`(60)$
+
+$Willingness~to~Pay = `r round(abs(bid_63), digits=2)`$    
+
+<br>
+
+
+Individual 7:
+
+$`r avg_vote` = `r round(vote_int, digits = 4)` + `r round(age_40, digits=4)`(Age~to~40) + `r round(inc_1, digits=4)`(Income~One~Percent) + `r round(NEP, digits=4)`(NEP*22) - `r round(bid, digits=4)`(Bid) + `r round(risk, digits=4)`(60)$
+
+$Willingness~to~Pay = `r round(abs(bid_7), digits=2)`$    
+
+
+<br>
+
 
 ```{r Question 4, echo = FALSE, include = FALSE, message = FALSE, warning = FALSE}
 
