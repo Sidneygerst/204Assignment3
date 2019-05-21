@@ -125,6 +125,7 @@ $(document).ready(function () {
 </div>
 
 
+<<<<<<< HEAD
 <pre class="r"><code>library(tidyverse)</code></pre>
 <pre><code>## Warning: package 'tidyverse' was built under R version 3.5.3</code></pre>
 <pre><code>## -- Attaching packages --------------------------------------------------------------------------------- tidyverse 1.2.1 --</code></pre>
@@ -230,6 +231,42 @@ vote_table &lt;- stargazer(lm_vote)</code></pre>
 ## \textit{Note:}  &amp; \multicolumn{1}{r}{$^{*}$p$&lt;$0.1; $^{**}$p$&lt;$0.05; $^{***}$p$&lt;$0.01} \\ 
 ## \end{tabular} 
 ## \end{table}</code></pre>
+=======
+<div id="linear-probability-model" class="section level3">
+<h3>1. Linear Probability Model</h3>
+<pre><code>## 
+## Call:
+## lm(formula = vote ~ risk + bid + NEP + income + age, data = hw3)
+## 
+## Residuals:
+##     Min      1Q  Median      3Q     Max 
+## -1.1078 -0.4242  0.1755  0.2968  0.7925 
+## 
+## Coefficients:
+##                     Estimate Std. Error t value Pr(&gt;|t|)    
+## (Intercept)        0.1196977  0.1198911   0.998    0.319    
+## risk               0.0007445  0.0008363   0.890    0.374    
+## bid               -0.0010699  0.0006585  -1.625    0.105    
+## NEP                0.0158639  0.0020887   7.595 1.58e-13 ***
+## incomeone_percent  0.0088282  0.0598973   0.147    0.883    
+## incomepoor         0.0027386  0.0649833   0.042    0.966    
+## incomerich         0.0074891  0.0682176   0.110    0.913    
+## incomevery_rich    0.0467922  0.0674876   0.693    0.488    
+## agetofifty         0.0099816  0.0633105   0.158    0.875    
+## agetoforty        -0.0201190  0.0623958  -0.322    0.747    
+## agetosixty        -0.0162261  0.0595666  -0.272    0.785    
+## agetothirty        0.0204401  0.0578269   0.353    0.724    
+## ---
+## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+## 
+## Residual standard error: 0.4291 on 488 degrees of freedom
+## Multiple R-squared:  0.1201, Adjusted R-squared:  0.1003 
+## F-statistic: 6.055 on 11 and 488 DF,  p-value: 2.549e-09</code></pre>
+<p><span class="math inline">\(Probability(Voting~Yes) = 0.1197 + 0.0204(Age~to~30) - -0.0201(Age~to~40) + 0.01(Age~to~50) - -0.0162(Age~to~60) + 0.0088(Income~One~Percent) + 0.0027(Income~Poor) + 0.0075(Income~Rich) + 0.0468(Income~Very~Rich) + 0.0159(NEP) - -0.0011(Bid) + 7\times 10^{-4}(Risk~Reduction)\)</span></p>
+<pre><code>## [1] &quot;very_rich&quot;</code></pre>
+<pre><code>## [1] &quot;tothirty&quot;</code></pre>
+</div>
+>>>>>>> a339fa4c638ed50affb27b7c3e9d9405ed2dcdba
 
 
 
