@@ -104,10 +104,61 @@ bid_zero <- (vote_int + (risk*0) + (NEP*NEP_avg) + inc_1 + inc_poor + inc_vrich 
 
 bid_four <- (vote_int + (risk*4) + (NEP*NEP_avg) + inc_1 + inc_poor + inc_rich + inc_vrich + age_50 + age_30 + age_40 + age_60 - avg_vote)/(-bid)
 
-#The value of a single whale is the difference between the willingness to pay for a vessel speed reduction program at 4% and at 0%. = 2.78
+#The value of a single whale is the difference between the willingness to pay (i.e.Bid) for a vessel speed reduction program at 4% and at 0%. = 2.78
 
 wtp_value <- bid_four - bid_zero 
 
 
 ```
+
+
+```{r Question 3, echo = FALSE}
+
+# Pick three arbitrary respondents. For each of those respondents, estimate their WTP for a VSR program offering 60% risk reduction
+
+
+# Filter for risk = 60%
+
+risk_60 <- hw3 %>% 
+  filter(risk == "60")
+
+# Respondent 8:
+# Risk = 60
+# Bid = 80
+# Vote = 1
+# NEP = 29
+# Income = Very_Rich
+# Age = ToThirty
+# VSR = 60%
+
+bid_8 <-(vote_int + (NEP*29) + inc_vrich + age_30 - avg_vote)/(-bid) 
+# bid_8 = $137
+
+
+# Respondent 63:
+# Risk = 60
+# Bid = 20
+# Vote = 1
+# NEP = 37
+# Income = Rich
+# Age = OverSixty
+
+bid_63 <-(vote_int + (NEP*37) + inc_rich - avg_vote)/(-bid) 
+#bid_63 = $200
+
+
+# Respondent 7:
+# Risk = 60
+# Bid = 40
+# Vote = 0
+# NEP = 22
+# Income = One Percent
+# Age = ToForty
+
+bid_7 <-(vote_int + (NEP*22) + inc_1 + age_40 - avg_vote)/(bid) 
+#bid_7 = $39.80
+
+
+```
+
 
