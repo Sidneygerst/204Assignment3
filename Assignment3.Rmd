@@ -248,7 +248,7 @@ $Willingness~to~Pay = `r round(abs(bid_7), digits=2)`$
 
 <br>
 
-
+### 4. Willingness to Pay for 60% risk reduction VSR program among average Santa Barbara households. 
 ```{r Question 4, echo = FALSE, include = FALSE, message = FALSE, warning = FALSE}
 
 #find mode of the categorical values: income : "very_rich"
@@ -277,6 +277,19 @@ bid_sb <- (vote_int + (NEP*NEP_avg) + age_30 + inc_vrich + (risk*60) - avg_vote)
 
 ```
 
+The probability of voting yes with the average of a yes vote ($p = 0.5$). We will use the mode income (very rich), the mode age (to 30), and average NEP (38.366) to calculate willingness to pay using:
+
+$`r avg_vote` = `r round(vote_int, digits = 4)` + `r round(inc_vrich, digits=4)`(Income~Very~Rich) + `r round(age_30, digits=4)`(Age~to~30) + `r round(NEP, digits=4)`(NEP) - `r round(bid, digits=4)`(Bid) + `r round(risk, digits=4)`(60)$
+
+<br>
+
+$Average~Santa~Barbara~County~Household~Willingness~to~Pay = `r round(abs(bid_sb), digits=2)`$ 
+
+<br>
+
+
+
+### 5. Total Benefit of a VSR program for 150,000 households in Santa Barbara County
 ```{r Question 5, echo = FALSE, include = FALSE, message = FALSE, warning = FALSE}
 
 # If there are 150,000 households in SB County, estimate the total benefit of a VSR program to these households
