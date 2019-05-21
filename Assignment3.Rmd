@@ -1,10 +1,6 @@
 ---
 title: "Assignment 3"
 output:
-<<<<<<< HEAD
-
-=======
->>>>>>> a339fa4c638ed50affb27b7c3e9d9405ed2dcdba
   html_document: default
 ---
 
@@ -25,7 +21,7 @@ hw3 <- read_csv("HW3Data.csv")
 
 ###1. Linear Probability Model 
 
-```{r Question 1, echo = FALSE}
+```{r Question 1, echo = FALSE, include = FALSE, message = FALSE, warning = FALSE}
 
 # Create a linear probability model that predicts a respondent's probability of voting 'yes' on the ballot based on their age, income, NEP score, the risk reduction offered by the program (risk), and the cost of the program to that respondent (bid). 
 
@@ -88,7 +84,7 @@ age_30 <- lm_vote$coefficients[12]
 $Probability(Voting~Yes) = `r round(vote_int, digits = 4)` + `r round(age_30, digits=4)`(Age~to~30) - `r round(age_40, digits=4)`(Age~to~40) + `r round(age_50, digits=4)`(Age~to~50) - `r round(age_60, digits=4)`(Age~to~60) + `r round(inc_1, digits=4)`(Income~One~Percent) + `r round(inc_poor, digits=4)`(Income~Poor) + `r round(inc_rich, digits=4)`(Income~Rich) + `r round(inc_vrich,digits=4)`(Income~Very~Rich) + `r round(NEP, digits=4)`(NEP) - `r round(bid, digits=4)`(Bid) + `r round(risk, digits=4)`(Risk~Reduction)$
 
 
-```{r Question 2, echo = FALSE}
+```{r Question 2, echo = FALSE, include = FALSE, message = FALSE, warning = FALSE}
 
 ## Based on this regression, what can you say about the value of a single prevented whale death? (Hint: Think about how risk reduction for all whales translates into the number of whale deaths avoided)
 
@@ -125,7 +121,7 @@ wtp_value <- bid_four - bid_zero
 
 
 
-```{r Question 3, echo = FALSE}
+```{r Question 3, echo = FALSE, include = FALSE, message = FALSE, warning = FALSE}
 
 # Pick three arbitrary respondents. For each of those respondents, estimate their WTP for a VSR program offering 60% risk reduction
 
@@ -174,7 +170,7 @@ bid_7 <-(vote_int + (NEP*22) + inc_1 + age_40 - avg_vote)/(bid)
 
 ```
 
-```{r Question 4, echo = FALSE}
+```{r Question 4, echo = FALSE, include = FALSE, message = FALSE, warning = FALSE}
 
 #find mode of the categorical values: income : "very_rich"
 income_mode <- hw3$income
@@ -202,7 +198,7 @@ bid_sb <- (vote_int + (NEP*NEP_avg) + age_30 + inc_vrich + (risk*60) - avg_vote)
 
 ```
 
-```{r Question 5, echo = FALSE}
+```{r Question 5, echo = FALSE, include = FALSE, message = FALSE, warning = FALSE}
 
 # If there are 150,000 households in SB County, estimate the total benefit of a VSR program to these households
 
@@ -214,7 +210,7 @@ bid_sbtotal <- ((vote_int + (NEP*NEP_avg) + age_30 + inc_vrich + risk - avg_vote
 ```
 
 
-```{r Question 6, echo = FALSE}
+```{r Question 6, echo = FALSE, include = FALSE, message = FALSE, warning = FALSE}
 
 # Based on the SB Total benefits, do the benefits of the VSR program outweigh the costs?
 
@@ -226,4 +222,15 @@ bid_sbtotal <- ((vote_int + (NEP*NEP_avg) + age_30 + inc_vrich + risk - avg_vote
 ```
 
 
+```{r Question 7, echo = FALSE, include = FALSE, message = FALSE, warning = FALSE}
+
+
+
+```
+
+
+
+```{r Question 8, echo = FALSE, include = FALSE, message = FALSE, warning = FALSE}
+
+```
 
