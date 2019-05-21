@@ -189,3 +189,28 @@ bid_sb <- (vote_int + (NEP*NEP_avg) + age_30 + inc_vrich + (risk*60) - avg_vote)
 
 ```
 
+```{r Question 5, echo = FALSE}
+
+# If there are 150,000 households in SB County, estimate the total benefit of a VSR program to these households
+
+bid_sbtotal <- ((vote_int + (NEP*NEP_avg) + age_30 + inc_vrich + risk - avg_vote)/(-bid))* 150000
+
+# The total benefit of a VSR program for all 150,000 [average] households is $41,542,642
+
+
+```
+
+
+```{r Question 6, echo = FALSE}
+
+# Based on the SB Total benefits, do the benefits of the VSR program outweigh the costs?
+
+# Costs of VSR program = $7 million
+# Total benefits to SB households = $41,542,642
+
+# YES, benefits outweigh the costs!
+
+```
+
+
+
