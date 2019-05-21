@@ -1,7 +1,6 @@
 ---
 title: "Assignment 3"
 output:
-  word_document: default
   html_document: default
 ---
 
@@ -19,6 +18,8 @@ hw3 <- read_csv("HW3Data.csv")
 
 
 ```
+
+###1. Linear Probability Model 
 
 ```{r Question 1, echo = FALSE}
 
@@ -56,27 +57,6 @@ summary(lm_vote)
 # Age to 30 are 0.0204401 are less likely to vote YES than age over 60.
 
 
-# Put linear model into stargazer table 
-
-stargazer(lm_vote)
-
-
-
-```
-
-```{r Question 2, echo = FALSE}
-
-## Based on this regression, what can you say about the value of a single prevented whale death? (Hint: Think about how risk reduction for all whales translates into the number of whale deaths avoided)
-
-#In order to reduce the risk of one whale strike, reduce the risk to 4%. 
-
-#The average of voting YES is 0.5
-
-#Compare the willingness to pay at business as usual (VSR of 0) to the willingness to pay when increasing the VSR to 4%. 
-
-#average of voting yes or no (0 or 1) is 0.5
-avg_vote <- 0.5
-
 #assign the variables
 
 vote_int <- lm_vote$coefficients[1]
@@ -91,6 +71,33 @@ age_50 <- lm_vote$coefficients[9]
 age_40 <- lm_vote$coefficients[10]
 age_60 <- lm_vote$coefficients[11]
 age_30 <- lm_vote$coefficients[12]
+
+
+# Put linear model into stargazer table 
+
+# stargazer(lm_vote)
+
+
+
+```
+
+$Probability(Voting~Yes) = `r round(vote_int, digits = 4)` + `r round(age_30, digits=4)`(Age~to~30) - `r round(age_40, digits=4)`(Age~to~40) + `r round(age_50, digits=4)`(Age~to~50) - `r round(age_60, digits=4)`(Age~to~60) + `r round(inc_1, digits=4)`(Income~One~Percent) + `r round(inc_poor, digits=4)`(Income~Poor) + `r round(inc_rich, digits=4)`(Income~Rich) + `r round(inc_vrich,digits=4)`(Income~Very~Rich) + `r round(NEP, digits=4)`(NEP) - `r round(bid, digits=4)`(Bid) + `r round(risk, digits=4)`(Risk~Reduction)$
+
+
+```{r Question 2, echo = FALSE}
+
+## Based on this regression, what can you say about the value of a single prevented whale death? (Hint: Think about how risk reduction for all whales translates into the number of whale deaths avoided)
+
+#In order to reduce the risk of one whale strike, reduce the risk to 4%. 
+
+#The average of voting YES is 0.5
+
+#Compare the willingness to pay at business as usual (VSR of 0) to the willingness to pay when increasing the VSR to 4%. 
+
+#average of voting yes or no (0 or 1) is 0.5
+avg_vote <- 0.5
+
+
 
 #average of NEP
 NEP_avg <- mean(hw3$NEP)  
@@ -110,6 +117,8 @@ wtp_value <- bid_four - bid_zero
 
 
 ```
+
+
 
 
 ```{r Question 3, echo = FALSE}
