@@ -128,6 +128,20 @@ $(document).ready(function () {
 <div id="linear-probability-model" class="section level3">
 <h3>1. Linear Probability Model</h3>
 <p><span class="math inline">\(Probability(Voting~Yes) = 0.1197 + 0.0204(Age~to~30) - -0.0201(Age~to~40) + 0.01(Age~to~50) - -0.0162(Age~to~60) + 0.0088(Income~One~Percent) + 0.0027(Income~Poor) + 0.0075(Income~Rich) + 0.0468(Income~Very~Rich) + 0.0159(NEP) - -0.0011(Bid) + 7\times 10^{-4}(Risk~Reduction)\)</span></p>
+<p>Interpreting the coefficients:</p>
+<ol style="list-style-type: lower-alpha">
+<li>Age to 30 are 0.0204401 are less likely to vote YES than age over 60.</li>
+<li>Age to 40 individuals are 0.0201190 more likely to vote YES than age over 60.</li>
+<li>Age to fifty individuals are 0.0099816 more likely to vote YES than age over 60.</li>
+<li>Age to 60 are 0.0162261 are less likely to vote YES than age over 60.</li>
+<li>Individuals in the top one percent income category are 0.0088282 more likely to vote YES than individuals in the middle income class.</li>
+<li>Individuals in the poor income category are 0.0027386 more likely to vote YES than inidividuals in the middle income category.</li>
+<li>Individuals in the rich income category are 0.0074891 more likely to vote YES than inidividuals in the middle income category.</li>
+<li>Individuals in the very rich income category are 0.0467922 more likely to vote YES than inidividuals in the middle income category.</li>
+<li>For every additional point increase for NEP score, there is an increase in probability of voting YES by 0.0158639.</li>
+<li>For every $1 increase in annual payment for a household (bid), there is a decrease in probability of voting YES by 0.0010699.</li>
+<li>For every 1% increase in risk reduction, there is an increase in probablility of voting YES by 0.0007445.</li>
+</ol>
 </div>
 
 

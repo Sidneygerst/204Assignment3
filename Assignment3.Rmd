@@ -83,6 +83,23 @@ age_30 <- lm_vote$coefficients[12]
 
 $Probability(Voting~Yes) = `r round(vote_int, digits = 4)` + `r round(age_30, digits=4)`(Age~to~30) - `r round(age_40, digits=4)`(Age~to~40) + `r round(age_50, digits=4)`(Age~to~50) - `r round(age_60, digits=4)`(Age~to~60) + `r round(inc_1, digits=4)`(Income~One~Percent) + `r round(inc_poor, digits=4)`(Income~Poor) + `r round(inc_rich, digits=4)`(Income~Rich) + `r round(inc_vrich,digits=4)`(Income~Very~Rich) + `r round(NEP, digits=4)`(NEP) - `r round(bid, digits=4)`(Bid) + `r round(risk, digits=4)`(Risk~Reduction)$
 
+Interpreting the coefficients:
+
+a. Age to 30 are 0.0204401 are less likely to vote YES than age over 60.
+b. Age to 40 individuals are 0.0201190 more likely to vote YES than age over 60.
+c. Age to 50 individuals are 0.0099816 more likely to vote YES than age over 60.
+d. Age to 60 are 0.0162261 are less likely to vote YES than age over 60.
+e. Individuals in the top one percent income category are 0.0088282 more likely to vote YES than individuals in the middle income class.
+f. Individuals in the poor income category are 0.0027386 more likely to vote YES than inidividuals in the middle income category.
+g. Individuals in the rich income category are 0.0074891 more likely to vote YES than inidividuals in the middle income category.
+h. Individuals in the very rich income category are 0.0467922 more likely to vote YES than inidividuals in the middle income category.
+i. For every additional point increase for NEP score, there is an increase in probability of voting YES by 0.0158639.
+j. For every $1 increase in annual payment for a household (bid), there is a decrease in probability of voting YES by 0.0010699.
+k. For every 1% increase in risk reduction, there is an increase in probablility of voting YES by 0.0007445.
+
+
+
+###2. Value of a single prevented whale death 
 
 ```{r Question 2, echo = FALSE, include = FALSE, message = FALSE, warning = FALSE}
 
