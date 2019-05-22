@@ -19,6 +19,11 @@ hw3 <- read_csv("HW3Data.csv")
 
 ```
 
+
+## Part 1. Analyzing costs and benefits of a VSR program
+
+<br>
+
 ###1. Linear Probability Model 
 
 ```{r Question 1, echo = FALSE, include = FALSE, message = FALSE, warning = FALSE}
@@ -245,7 +250,7 @@ $`r avg_vote` = `r round(vote_int, digits = 4)` + `r round(age_40, digits=4)`(Ag
 
 $Willingness~to~Pay = `r round(abs(bid_7), digits=2)`$    
 
-
+<br>
 <br>
 
 ### 4. Willingness to Pay for 60% risk reduction VSR program among average Santa Barbara households. 
@@ -286,7 +291,7 @@ $`r avg_vote` = `r round(vote_int, digits = 4)` + `r round(inc_vrich, digits=4)`
 $Average~Santa~Barbara~County~Household~Willingness~to~Pay = `r round(abs(bid_sb), digits=2)`$ 
 
 <br>
-
+<br>
 
 
 ### 5. Total Benefit of a VSR program for 150,000 households in Santa Barbara County
@@ -300,7 +305,17 @@ bid_sbtotal <- ((vote_int + (NEP*NEP_avg) + age_30 + inc_vrich + risk - avg_vote
 
 
 ```
+$`r avg_vote` = (`r round(vote_int, digits = 4)` + `r round(inc_vrich, digits=4)`(Income~Very~Rich) + `r round(age_30, digits=4)`(Age~to~30) + `r round(NEP, digits=4)`(NEP) - `r round(bid, digits=4)`(Bid) + `r round(risk, digits=4)`(Risk))*(150000)$
 
+<br>
+
+$Total~Benefit = `r format(bid_sbtotal, scientific = F) `$ 
+
+<br>
+<br>
+
+
+### 6. Do the benefits of the VSR program outweigh the costs? 
 
 ```{r Question 6, echo = FALSE, include = FALSE, message = FALSE, warning = FALSE}
 
@@ -312,7 +327,20 @@ bid_sbtotal <- ((vote_int + (NEP*NEP_avg) + age_30 + inc_vrich + risk - avg_vote
 # YES, benefits outweigh the costs!
 
 ```
+- Costs of VSR program = $7 million
+- Total benefits to Santa Barbara households = $41,542,642
 
+$The~benefits~outwiegh~the~costs$
+
+<br>
+<br>
+
+## Part 2. Evaluating the costs and benefits of carbon trading markets to mitigate fatal whale strikes
+
+<br>
+
+
+### 7. At what price will the shipping industry decide to adopt the VSR for purely self-interested reasons? 
 
 ```{r Question 7, echo = FALSE, include = FALSE, message = FALSE, warning = FALSE}
 
