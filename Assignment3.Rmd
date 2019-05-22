@@ -257,7 +257,7 @@ $Willingness~to~Pay = `r round(abs(bid_7), digits=2)`$
 ### 4. Willingness to Pay for 60% risk reduction VSR program among average Santa Barbara households. 
 ```{r Question 4, echo = FALSE, include = FALSE, message = FALSE, warning = FALSE}
 
-#find mode of the categorical values: income : "very_rich"
+#find mode of the categorical values: income : "one_percent"
 income_mode <- hw3$income
 
 income_mode[hw3 %>%
@@ -276,16 +276,16 @@ age_mode[hw3 %>%
 
 #Again assume the probability of voting yes the average of voting yes ($p = .5). Use the most common income bracket (very rich), the most common age bracket (to 30), and average NEP (38.366) to calculate willingness to pay using:
 
-bid_sb <- (vote_int + (NEP*NEP_avg) + age_30 + inc_vrich + (risk*60) - avg_vote)/(-bid)
+bid_sb <- (vote_int + (NEP*NEP_avg) + age_30 + inc_1 + (risk*60) - avg_vote)/(-bid)
 
-#the average WTP for all of Santa Barbara residents for 60% risk reduction program is $318
+#the average WTP for all of Santa Barbara residents for 60% risk reduction program is $283
 
 
 ```
 
-The probability of voting yes with the average of a yes vote ($p = 0.5$). We will use the mode income (very rich), the mode age (to 30), and average NEP (38.366) to calculate willingness to pay using:
+The probability of voting yes with the average of a yes vote ($p = 0.5$). We will use the mode income (one percent), the mode age (to 30), and average NEP (38.366) to calculate willingness to pay using:
 
-$`r avg_vote` = `r round(vote_int, digits = 4)` + `r round(inc_vrich, digits=4)`(Income~Very~Rich) + `r round(age_30, digits=4)`(Age~to~30) + `r round(NEP, digits=4)`(NEP) + `r round(bid, digits=4)`(Bid) + `r round(risk, digits=4)`(60)$
+$`r avg_vote` = `r round(vote_int, digits = 4)` + `r round(inc_1, digits=4)`(Income~One~Percent) + `r round(age_30, digits=4)`(Age~to~30) + `r round(NEP, digits=4)`(NEP) + `r round(bid, digits=4)`(Bid) + `r round(risk, digits=4)`(60)$
 
 <br>
 
@@ -300,15 +300,15 @@ $Average~Santa~Barbara~County~Household~Willingness~to~Pay = `r round(abs(bid_sb
 
 # If there are 150,000 households in SB County, estimate the total benefit of a VSR program to these households
 
-bid_sbtotal <- ((vote_int + (NEP*NEP_avg) + age_30 + inc_vrich + (risk*60) - avg_vote)/(-bid))* 150000
+bid_sbtotal <- ((vote_int + (NEP*NEP_avg) + age_30 + inc_1 + (risk*60) - avg_vote)/(-bid))* 150000
 
-# The total benefit of a VSR program for all 150,000 [average] households is $47,700,914
+# The total benefit of a VSR program for all 150,000 [average] households is $42,378,337
 
 
 ```
 Calculate the Total Benefits using the following equation: 
 
-$`r avg_vote` = (`r round(vote_int, digits = 4)` + `r round(inc_vrich, digits=4)`(Income~Very~Rich) + `r round(age_30, digits=4)`(Age~to~30) + `r round(NEP, digits=4)`(NEP) + `r round(bid, digits=4)`(Bid) + `r round(risk, digits=4)`(Risk))*(150000)$
+$`r avg_vote` = (`r round(vote_int, digits = 4)` + `r round(inc_1, digits=4)`(Income~One~Percent) + `r round(age_30, digits=4)`(Age~to~30) + `r round(NEP, digits=4)`(NEP) + `r round(bid, digits=4)`(Bid) + `r round(risk, digits=4)`(Risk))*(150000)$
 
 <br>
 
@@ -325,7 +325,7 @@ $Total~Benefit = `r format(bid_sbtotal, scientific = F) `$
 # Based on the SB Total benefits, do the benefits of the VSR program outweigh the costs?
 
 # Costs of VSR program = $7 million
-# Total benefits to SB households = $41,542,642
+# Total benefits to SB households = $42,378,337
 
 # YES, benefits outweigh the costs!
 
