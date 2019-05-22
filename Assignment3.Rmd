@@ -356,7 +356,40 @@ $20*Z=1000$
 
 $Z = \$`r Z`~per~ton$
 
-```{r Question 8, echo = FALSE, include = FALSE, message = FALSE, warning = FALSE}
+<br>
+<br>
+
+### 8a. Approximately how many whales would be saved if all ships voluntarily adopted the VSR?
+```{r Question 8a, echo = FALSE, include = FALSE, message = FALSE, warning = FALSE}
+
+# The exact Value of the carbon credit is $50 per ton, and all ships voluntarily reduce speed to acheive 60% risk reduction. How many whales will be saved? 
+
+# A 20% risk reduction is expected to save at least 5 whales
+# Therefore, a 60% risk reduction would be 5*3 = 15 whales saved
 
 ```
+
+If 5 whales are saved with a 20% risk reduction program, then a 60% risk reduction program would save aproximately 3 times that amount of whales, equaling 15 whales saved. 
+
+<br>
+
+### 8b. What would be the social value of allowing ships to enter the carbon trading market? 
+
+```{r Question 8b, echo = FALSE, include = FALSE, message = FALSE, warning = FALSE }
+
+
+# The social value of the carbon trading market would be the total benefits minus the costs of the program. If the ships are voluntarily reducing speed, then the $7 million costs are avoided. Therefore, the social value of allowing ships to enter the carbon trading market will be the Total Benefit calculated from problem 5.  
+
+# Social value = $41,542,642
+
+
+
+
+```
+
+
+
+
+
+
 
