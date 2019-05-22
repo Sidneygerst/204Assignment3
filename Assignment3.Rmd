@@ -1,6 +1,7 @@
 ---
 title: "Assignment 3"
 output:
+  word_document: default
   html_document: default
 ---
 
@@ -86,7 +87,7 @@ age_30 <- lm_vote$coefficients[12]
 
 ```
 
-$Probability(Voting~Yes) = `r round(vote_int, digits = 4)` + `r round(age_30, digits=4)`(Age~to~30) - `r round(age_40, digits=4)`(Age~to~40) + `r round(age_50, digits=4)`(Age~to~50) - `r round(age_60, digits=4)`(Age~to~60) + `r round(inc_1, digits=4)`(Income~One~Percent) + `r round(inc_poor, digits=4)`(Income~Poor) + `r round(inc_rich, digits=4)`(Income~Rich) + `r round(inc_vrich,digits=4)`(Income~Very~Rich) + `r round(NEP, digits=4)`(NEP) - `r round(bid, digits=4)`(Bid) + `r round(risk, digits=4)`(Risk~Reduction)$
+$Probability(Voting~Yes) = `r round(vote_int, digits = 4)` + `r round(age_30, digits=4)`(Age~to~30) + `r round(age_40, digits=4)`(Age~to~40) + `r round(age_50, digits=4)`(Age~to~50) + `r round(age_60, digits=4)`(Age~to~60) + `r round(inc_1, digits=4)`(Income~One~Percent) + `r round(inc_poor, digits=4)`(Income~Poor) + `r round(inc_rich, digits=4)`(Income~Rich) + `r round(inc_vrich,digits=4)`(Income~Very~Rich) + `r round(NEP, digits=4)`(NEP) + `r round(bid, digits=4)`(Bid) + `r round(risk, digits=4)`(Risk~Reduction)$
 
 Interpreting the coefficients:
 
@@ -142,13 +143,13 @@ wtp_value <- bid_four - bid_zero
 ```
 
 **The Bid when reduction is 0%. The average vote between 0 (no) and 1 (yes) is 0.5. **
-$0.5 = `r round(vote_int, digits = 4)` + `r round(risk, digits=4)`(0) + `r round(NEP, digits=4)`(NEP) + `r round(inc_1, digits=4)`(Income~One~Percent) + `r round(inc_vrich, digits=4)`(Income~Very~Rich)  + `r round(inc_rich, digits=4)`(Income~Rich) +`r round(age_50, digits=4)`(Age~to~50) +`r round(age_30, digits=4)`(Age~to~30) +`r round(age_40, digits=4)`(Age~to~40) +`r round(age_60, digits=4)`(Age~to~60) - `r round(bid, digits=4)`(Bid)$
+$0.5 = `r round(vote_int, digits = 4)` + `r round(risk, digits=4)`(0) + `r round(NEP, digits=4)`(NEP) + `r round(inc_1, digits=4)`(Income~One~Percent) + `r round(inc_vrich, digits=4)`(Income~Very~Rich)  + `r round(inc_rich, digits=4)`(Income~Rich) +`r round(age_50, digits=4)`(Age~to~50) +`r round(age_30, digits=4)`(Age~to~30) +`r round(age_40, digits=4)`(Age~to~40) +`r round(age_60, digits=4)`(Age~to~60) + `r round(bid, digits=4)`(Bid)$
 
 $Willingness~to~Pay = `r round(bid_zero, digits=2)`$
 
 <br>
 **The Bid when reduction is 4%. **
-$0.5 = `r round(vote_int, digits = 4)` + `r round(risk, digits=4)`(4) + `r round(NEP, digits=4)`(NEP) + `r round(inc_1, digits=4)`(Income~One~Percent) + `r round(inc_vrich, digits=4)`(Income~Very~Rich)  + `r round(inc_rich, digits=4)`(Income~Rich) +`r round(age_50, digits=4)`(Age~to~50) +`r round(age_30, digits=4)`(Age~to~30) +`r round(age_40, digits=4)`(Age~to~40) +`r round(age_60, digits=4)`(Age~to~60) - `r round(bid, digits=4)`(Bid)$
+$0.5 = `r round(vote_int, digits = 4)` + `r round(risk, digits=4)`(4) + `r round(NEP, digits=4)`(NEP) + `r round(inc_1, digits=4)`(Income~One~Percent) + `r round(inc_vrich, digits=4)`(Income~Very~Rich)  + `r round(inc_rich, digits=4)`(Income~Rich) +`r round(age_50, digits=4)`(Age~to~50) +`r round(age_30, digits=4)`(Age~to~30) +`r round(age_40, digits=4)`(Age~to~40) +`r round(age_60, digits=4)`(Age~to~60) + `r round(bid, digits=4)`(Bid)$
 
 $Willingness~to~Pay = `r round(bid_four, digits=2)`$ 
 
@@ -229,7 +230,7 @@ bid_7 <-(vote_int + (NEP*22) + inc_1 + age_40 - avg_vote)/(bid)
 
 Individual 8: 
 
-$`r avg_vote` = `r round(vote_int, digits = 4)` + `r round(age_30, digits=4)`(Age~to~30) + `r round(inc_vrich, digits=4)`(Income~Very~Rich) + `r round(NEP, digits=4)`(NEP*29) - `r round(bid, digits=4)`(Bid) + `r round(risk, digits=4)`(60)$
+$`r avg_vote` = `r round(vote_int, digits = 4)` + `r round(age_30, digits=4)`(Age~to~30) + `r round(inc_vrich, digits=4)`(Income~Very~Rich) + `r round(NEP, digits=4)`(NEP*29) + `r round(bid, digits=4)`(Bid) + `r round(risk, digits=4)`(60)$
 
 $Willingness~to~Pay = `r round(abs(bid_8), digits=2)`$    
 
@@ -237,7 +238,7 @@ $Willingness~to~Pay = `r round(abs(bid_8), digits=2)`$
 
 Individual 63: 
 
-$`r avg_vote` = `r round(vote_int, digits = 4)` + `r round(inc_rich, digits=4)`(Income~Rich) + `r round(NEP, digits=4)`(NEP*37) - `r round(bid, digits=4)`(Bid) + `r round(risk, digits=4)`(60)$
+$`r avg_vote` = `r round(vote_int, digits = 4)` + `r round(inc_rich, digits=4)`(Income~Rich) + `r round(NEP, digits=4)`(NEP*37) + `r round(bid, digits=4)`(Bid) + `r round(risk, digits=4)`(60)$
 
 $Willingness~to~Pay = `r round(abs(bid_63), digits=2)`$    
 
@@ -246,7 +247,7 @@ $Willingness~to~Pay = `r round(abs(bid_63), digits=2)`$
 
 Individual 7:
 
-$`r avg_vote` = `r round(vote_int, digits = 4)` + `r round(age_40, digits=4)`(Age~to~40) + `r round(inc_1, digits=4)`(Income~One~Percent) + `r round(NEP, digits=4)`(NEP*22) - `r round(bid, digits=4)`(Bid) + `r round(risk, digits=4)`(60)$
+$`r avg_vote` = `r round(vote_int, digits = 4)` + `r round(age_40, digits=4)`(Age~to~40) + `r round(inc_1, digits=4)`(Income~One~Percent) + `r round(NEP, digits=4)`(NEP*22) + `r round(bid, digits=4)`(Bid) + `r round(risk, digits=4)`(60)$
 
 $Willingness~to~Pay = `r round(abs(bid_7), digits=2)`$    
 
@@ -284,7 +285,7 @@ bid_sb <- (vote_int + (NEP*NEP_avg) + age_30 + inc_vrich + (risk*60) - avg_vote)
 
 The probability of voting yes with the average of a yes vote ($p = 0.5$). We will use the mode income (very rich), the mode age (to 30), and average NEP (38.366) to calculate willingness to pay using:
 
-$`r avg_vote` = `r round(vote_int, digits = 4)` + `r round(inc_vrich, digits=4)`(Income~Very~Rich) + `r round(age_30, digits=4)`(Age~to~30) + `r round(NEP, digits=4)`(NEP) - `r round(bid, digits=4)`(Bid) + `r round(risk, digits=4)`(60)$
+$`r avg_vote` = `r round(vote_int, digits = 4)` + `r round(inc_vrich, digits=4)`(Income~Very~Rich) + `r round(age_30, digits=4)`(Age~to~30) + `r round(NEP, digits=4)`(NEP) + `r round(bid, digits=4)`(Bid) + `r round(risk, digits=4)`(60)$
 
 <br>
 
@@ -299,13 +300,15 @@ $Average~Santa~Barbara~County~Household~Willingness~to~Pay = `r round(abs(bid_sb
 
 # If there are 150,000 households in SB County, estimate the total benefit of a VSR program to these households
 
-bid_sbtotal <- ((vote_int + (NEP*NEP_avg) + age_30 + inc_vrich + risk - avg_vote)/(-bid))* 150000
+bid_sbtotal <- ((vote_int + (NEP*NEP_avg) + age_30 + inc_vrich + (risk*60) - avg_vote)/(-bid))* 150000
 
-# The total benefit of a VSR program for all 150,000 [average] households is $41,542,642
+# The total benefit of a VSR program for all 150,000 [average] households is $47,700,914
 
 
 ```
-$`r avg_vote` = (`r round(vote_int, digits = 4)` + `r round(inc_vrich, digits=4)`(Income~Very~Rich) + `r round(age_30, digits=4)`(Age~to~30) + `r round(NEP, digits=4)`(NEP) - `r round(bid, digits=4)`(Bid) + `r round(risk, digits=4)`(Risk))*(150000)$
+Calculate the Total Benefits using the following equation: 
+
+$`r avg_vote` = (`r round(vote_int, digits = 4)` + `r round(inc_vrich, digits=4)`(Income~Very~Rich) + `r round(age_30, digits=4)`(Age~to~30) + `r round(NEP, digits=4)`(NEP) + `r round(bid, digits=4)`(Bid) + `r round(risk, digits=4)`(Risk))*(150000)$
 
 <br>
 
@@ -328,8 +331,9 @@ $Total~Benefit = `r format(bid_sbtotal, scientific = F) `$
 
 ```
 - Costs of VSR program = $7 million
-- Total benefits to Santa Barbara households = $41,542,642
+- Total benefits to Santa Barbara households = $`r format(bid_sbtotal, scientific = F) ` 
 
+<br>
 $The~benefits~outwiegh~the~costs$
 
 <br>
@@ -387,7 +391,10 @@ If 5 whales are saved with a 20% risk reduction program, then a 60% risk reducti
 
 ```
 
+The social value of the carbon trading market would be the total benefits minus the costs of the program. If the ships are voluntarily reducing speed, then the $7 million costs are avoided. Therefore, the social value of allowing ships to enter the carbon trading market will be the Total Benefit calculated from problem 5.  
 
+<br>
+Social value = `r format(bid_sbtotal, scientific = F) `
 
 
 
