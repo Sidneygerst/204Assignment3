@@ -444,14 +444,14 @@ logage_30 <- log_vote$coefficients[12]
 
 Interpreting the coefficients:
 
-a. Age to 30 are 0.0204401 are less likely to vote YES than age over 60.
-b. Age to 40 individuals are 0.0201190 more likely to vote YES than age over 60.
-c. Age to 50 individuals are 0.0099816 more likely to vote YES than age over 60.
-d. Age to 60 are 0.0162261 are less likely to vote YES than age over 60.
-e. Individuals in the top one percent income category are 0.0088282 more likely to vote YES than individuals in the middle income class.
-f. Individuals in the poor income category are 0.0027386 more likely to vote YES than inidividuals in the middle income category.
-g. Individuals in the rich income category are 0.0074891 more likely to vote YES than inidividuals in the middle income category.
-h. Individuals in the very rich income category are 0.0467922 more likely to vote YES than inidividuals in the middle income category.
-i. For every additional point increase for NEP score, there is an increase in probability of voting YES by 0.0158639.
-j. For every $1 increase in annual payment for a household (bid), there is a decrease in probability of voting YES by 0.0010699.
-k. For every 1% increase in risk reduction, there is an increase in probablility of voting YES by 0.0007445.
+a. Age to 30 are 0.092936  are more likely to vote YES than age over 60.
+b. Age to 40 individuals are 0.127045 less likely to vote YES than age over 60.
+c. Age to 50 individuals are 0.062771 more likely to vote YES than age over 60.
+d. Age to 60 are 0.107886 are less likely to vote YES than age over 60.
+e. Individuals in the top one percent income category are 0.059366 more likely to vote YES than individuals in the middle income class.
+f. Individuals in the poor income category are 0.040298 more likely to vote YES than inidividuals in the middle income category.
+g. Individuals in the rich income category are 0.060219 more likely to vote YES than inidividuals in the middle income category.
+h. Individuals in the very rich income category are 0.277879  more likely to vote YES than inidividuals in the middle income category.
+i. For every additional point increase for NEP score, there is an increase in probability of voting YES by 0.083213.
+j. For every $1 increase in annual payment for a household (bid), there is a decrease in probability of voting YES by 0.005865.
+k. For every 1% increase in risk reduction, there is an increase in probablility of voting YES by 0.004169.
