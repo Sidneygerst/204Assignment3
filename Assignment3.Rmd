@@ -466,21 +466,3 @@ Value of a single whale changed from \$2.78 to \$2.84
 <br>
 
 ## Willingness to pay: 
-```{r}
-
-#Find the Bid (cost to households) when reduction is 0% = 164 
-
-bid_zero_log <- (logvote_int + (risk*0) + (logNEP*NEP_avg) + loginc_1 + loginc_poor + loginc_vrich + loginc_rich + logage_50 + logage_30 + logage_40 + logage_60 - avg_vote)/(-logbid)
-
-#Find the Bid (cost to households) when reduction is 4% = 167
-
-bid_four_log <- (logvote_int + (logrisk*4) + (logNEP*NEP_avg) + loginc_1 + loginc_poor + loginc_rich + loginc_vrich + logage_50 + logage_30 + logage_40 + logage_60 - avg_vote)/(-logbid)
-
-#The value of a single whale is the difference between the willingness to pay (i.e.Bid) for a vessel speed reduction program at 4% and at 0%. = 2.84
-
-wtp_value_log <- bid_four_log - bid_zero_log 
-
-
-
-```
-
