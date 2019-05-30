@@ -460,13 +460,14 @@ k. For every 1% increase in risk reduction, there is an increase in probablility
 
 ## Value of a single whale: 
 
-Value of a single whale changed from \$2.78 to \$2.84.
+Value of a single whale changed from \$2.78 to \$2.84 
 
 
 <br>
 
+<<<<<<< HEAD
 ## Willingness to pay: 
-```{r, echo = FALSE}
+```{r}
 
 #Find the Bid (cost to households) when reduction is 0% = 164 
 
@@ -483,28 +484,10 @@ wtp_value_log <- bid_four_log - bid_zero_log
 
 
 ```
-The average willingness to pay for VSR program when risk reduction is **0%** changed from \$269.00 to \$164.00.
 
-The average willingness to pay for VSR program when risk reduction is **4%** changed from \$272.00 to $167.00.
+=======
+## Willingness to pay: 
+>>>>>>> e6685d6aa529f91be17048db0bf1991b89f6ac05
 
 
 
-```{r, WTP for 60%, echo = FALSE}
-
-log_bid_sb <- (logvote_int + (logNEP*NEP_avg) + logage_30 + loginc_1 + (logrisk*60) - avg_vote)/(-logbid)
-
-# TOTAL BENEFIT = log_bid_sb * 150,000
-
-log_bid_sbT <- log_bid_sb*150000 
-
-# 25,746,456
-
-## Original total benefit was = 42,378,337
-
-```
-
-The average willingness to pay for VSR program when risk reduction is **%60** changed from \$283.00 to \$172.00.
-
-<br>
-
-The total benefits for Santa Barbara County residents decreased from \$42,378,337 to \$25,748,456.
