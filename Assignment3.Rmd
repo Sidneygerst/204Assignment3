@@ -399,23 +399,21 @@ Social value = `r format(bid_sbtotal, scientific = F) `
 
 
 ***
-*EXTRA CREDIT*
+###*EXTRA CREDIT*
 
 ```{r}
 
 #Create a logit regression and compare to the linear
-log_vote <- glm(formula = vote ~ risk + bid + NEP + income + age, data = hw3)
+log_vote <- glm(formula = vote ~ risk + bid + NEP + income + age, data = hw3, family = binomial)
 
 log_vote
-# Call:  glm(formula = vote ~ risk + bid + NEP + income + age, data = hw3)
-# 
 # Coefficients:
-#       (Intercept)               risk                bid                NEP  incomeone_percent  
-#         0.1196977          0.0007445         -0.0010699          0.0158639          0.0088282  
-#        incomepoor         incomerich    incomevery_rich         agetofifty         agetoforty  
-#         0.0027386          0.0074891          0.0467922          0.0099816         -0.0201190  
-#        agetosixty        agetothirty  
-#        -0.0162261          0.0204401  
+#       (Intercept)               risk                bid                NEP  
+#         -2.088292           0.004169          -0.005865           0.083213  
+# incomeone_percent         incomepoor         incomerich    incomevery_rich  
+#          0.059366           0.040298           0.060219           0.277879  
+#        agetofifty         agetoforty         agetosixty        agetothirty  
+#          0.062771          -0.127045          -0.107886           0.092936  
 
 
 #The LM Coefficients
@@ -426,6 +424,34 @@ log_vote
 #        incomerich    incomevery_rich         agetofifty         agetoforty         agetosixty        agetothirty  
 #         0.0074891          0.0467922          0.0099816         -0.0201190         -0.0162261          0.0204401 
 
+
+logvote_int <- log_vote$coefficients[1]
+logrisk <- log_vote$coefficients[2]
+logbid <- log_vote$coefficients[3]
+logNEP <- log_vote$coefficients[4]
+loginc_1 <- log_vote$coefficients[5]
+loginc_poor <- log_vote$coefficients[6]
+loginc_rich <- log_vote$coefficients[7]
+loginc_vrich <- log_vote$coefficients[8]
+logage_50 <- log_vote$coefficients[9]
+logage_40 <- log_vote$coefficients[10]
+logage_60 <- log_vote$coefficients[11]
+logage_30 <- log_vote$coefficients[12]
+
+
+
 ```
 
+Interpreting the coefficients:
 
+a. Age to 30 are 0.0204401 are less likely to vote YES than age over 60.
+b. Age to 40 individuals are 0.0201190 more likely to vote YES than age over 60.
+c. Age to 50 individuals are 0.0099816 more likely to vote YES than age over 60.
+d. Age to 60 are 0.0162261 are less likely to vote YES than age over 60.
+e. Individuals in the top one percent income category are 0.0088282 more likely to vote YES than individuals in the middle income class.
+f. Individuals in the poor income category are 0.0027386 more likely to vote YES than inidividuals in the middle income category.
+g. Individuals in the rich income category are 0.0074891 more likely to vote YES than inidividuals in the middle income category.
+h. Individuals in the very rich income category are 0.0467922 more likely to vote YES than inidividuals in the middle income category.
+i. For every additional point increase for NEP score, there is an increase in probability of voting YES by 0.0158639.
+j. For every $1 increase in annual payment for a household (bid), there is a decrease in probability of voting YES by 0.0010699.
+k. For every 1% increase in risk reduction, there is an increase in probablility of voting YES by 0.0007445.
