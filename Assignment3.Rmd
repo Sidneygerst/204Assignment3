@@ -465,6 +465,7 @@ Value of a single whale changed from \$2.78 to \$2.84
 
 <br>
 
+<<<<<<< HEAD
 ## Willingness to pay: 
 ```{r}
 
@@ -484,3 +485,6 @@ wtp_value_log <- bid_four_log - bid_zero_log
 
 ```
 
+=======
+## Willingness to pay: 
+>>>>>>> e6685d6aa529f91be17048db0bf1991b89f6ac05
