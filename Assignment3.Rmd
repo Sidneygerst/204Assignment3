@@ -398,5 +398,34 @@ Social value = `r format(bid_sbtotal, scientific = F) `
 
 
 
+***
+*EXTRA CREDIT*
+
+```{r}
+
+#Create a logit regression and compare to the linear
+log_vote <- glm(formula = vote ~ risk + bid + NEP + income + age, data = hw3)
+
+log_vote
+# Call:  glm(formula = vote ~ risk + bid + NEP + income + age, data = hw3)
+# 
+# Coefficients:
+#       (Intercept)               risk                bid                NEP  incomeone_percent  
+#         0.1196977          0.0007445         -0.0010699          0.0158639          0.0088282  
+#        incomepoor         incomerich    incomevery_rich         agetofifty         agetoforty  
+#         0.0027386          0.0074891          0.0467922          0.0099816         -0.0201190  
+#        agetosixty        agetothirty  
+#        -0.0162261          0.0204401  
+
+
+#The LM Coefficients
+# Coefficients:
+#       (Vote)               risk                bid                NEP     incomeone_percent         incomepoor  
+#         0.1196977          0.0007445         -0.0010699          0.0158639          0.0088282          0.0027386  
+
+#        incomerich    incomevery_rich         agetofifty         agetoforty         agetosixty        agetothirty  
+#         0.0074891          0.0467922          0.0099816         -0.0201190         -0.0162261          0.0204401 
+
+```
 
 
