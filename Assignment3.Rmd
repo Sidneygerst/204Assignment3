@@ -445,7 +445,7 @@ logage_30 <- log_vote$coefficients[12]
 Interpreting the coefficients:
 
 a. Age to 30 are 0.0204401 are less likely to vote YES than age over 60.
-b. Age to 40 individuals are 0.0201190 more likely to vote YES than age over 60.
+b. Age to 40 individuals are 0.127045 less likely to vote YES than age over 60.
 c. Age to 50 individuals are 0.0099816 more likely to vote YES than age over 60.
 d. Age to 60 are 0.0162261 are less likely to vote YES than age over 60.
 e. Individuals in the top one percent income category are 0.0088282 more likely to vote YES than individuals in the middle income class.
@@ -455,3 +455,27 @@ h. Individuals in the very rich income category are 0.0467922 more likely to vot
 i. For every additional point increase for NEP score, there is an increase in probability of voting YES by 0.0158639.
 j. For every $1 increase in annual payment for a household (bid), there is a decrease in probability of voting YES by 0.0010699.
 k. For every 1% increase in risk reduction, there is an increase in probablility of voting YES by 0.0007445.
+
+
+
+
+
+
+
+
+
+####Find the value of one whale 
+```{r}
+
+#Find the Bid (cost to households) when reduction is 0% = 164
+bid_zero_log <- (logvote_int + (risk*0) + (logNEP*NEP_avg) + loginc_1 + loginc_poor + loginc_vrich + loginc_rich + logage_50 + logage_30 + logage_40 + logage_60 - avg_vote)/(-logbid)
+
+#Find the Bid (cost to households) when reduction is 4% = 167
+bid_four_log <- (logvote_int + (logrisk*4) + (logNEP*NEP_avg) + loginc_1 + loginc_poor + loginc_rich + loginc_vrich + logage_50 + logage_30 + logage_40 + logage_60 - avg_vote)/(-logbid)
+
+#The value of a single whale is the difference between the willingness to pay (i.e.Bid) for a vessel speed reduction program at 4% and at 0%. = 2.84
+
+wtp_value_log <- bid_four_log - bid_zero_log 
+
+```
+
