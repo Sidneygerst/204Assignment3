@@ -442,7 +442,7 @@ logage_30 <- log_vote$coefficients[12]
 
 ```
 
-Interpreting the coefficients:
+## Interpreting the Log Regression coefficients:
 
 a. Age to 30 are 0.092936  are more likely to vote YES than age over 60.
 b. Age to 40 individuals are 0.127045 less likely to vote YES than age over 60.
@@ -455,3 +455,14 @@ h. Individuals in the very rich income category are 0.277879  more likely to vot
 i. For every additional point increase for NEP score, there is an increase in probability of voting YES by 0.083213.
 j. For every $1 increase in annual payment for a household (bid), there is a decrease in probability of voting YES by 0.005865.
 k. For every 1% increase in risk reduction, there is an increase in probablility of voting YES by 0.004169.
+
+<br>
+
+## Value of a single whale: 
+
+Value of a single whale changed from \$2.78 to \$2.84 
+
+
+<br>
+
+## Willingness to pay: 
